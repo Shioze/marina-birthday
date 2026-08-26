@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff5c8a">
+<meta name="description" content="A birthday surprise made with love for Marina.">
+<title>Happy Birthday, Marina ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink:#ff5c8a;
+  --rose:#ff8fb0;
+  --deep:#2a1621;
+  --cream:#fff8fa;
+  --muted:#745b66;
+  --card:rgba(255,255,255,.78);
+  --shadow:0 20px 60px rgba(77,28,48,.14);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  color:var(--deep);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255,143,176,.18), transparent 28%),
+    radial-gradient(circle at 90% 20%, rgba(255,92,138,.14), transparent 30%),
+    linear-gradient(180deg,#fffafd 0%,#fff4f7 48%,#fffafb 100%);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
+}
+a { color:inherit; text-decoration:none; }
+.container { width:min(1120px,92%); margin:auto; }
+.nav {
+  position:fixed; top:16px; left:50%; transform:translateX(-50%);
+  width:min(1000px,92%); z-index:50;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 16px 12px 20px;
+  background:rgba(255,255,255,.72); backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.9); border-radius:999px;
+  box-shadow:0 10px 35px rgba(66,20,39,.08);
+}
+.brand { font-weight:800; letter-spacing:.2px; }
+.brand span { color:var(--pink); }
+.navlinks { display:flex; gap:18px; font-size:14px; font-weight:600; color:#5f4651; }
+.navlinks a:hover { color:var(--pink); }
+.hero {
+  min-height:100svh; display:grid; place-items:center; text-align:center;
+  padding:110px 20px 70px; position:relative; isolation:isolate;
+}
+.hero:before {
+  content:""; position:absolute; inset:0; z-index:-2;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255,255,255,.98), transparent 38%),
+    radial-gradient(circle at 20% 75%, rgba(255,92,138,.18), transparent 28%),
+    radial-gradient(circle at 85% 65%, rgba(255,143,176,.2), transparent 30%);
+}
+.hero-card { max-width:850px; }
+.eyebrow {
+  display:inline-flex; padding:8px 14px; border-radius:999px;
+  background:#fff; box-shadow:0 8px 30px rgba(80,20,42,.08);
+  color:var(--pink); font-weight:800; font-size:13px; letter-spacing:.08em;
+  text-transform:uppercase;
+}
+h1 {
+  font-family:"Playfair Display",serif;
+  font-size:clamp(54px,10vw,112px); line-height:.92;
+  margin:24px 0 20px; letter-spacing:-.045em;
+}
+h1 .accent {
+  color:var(--pink);
+  text-shadow:0 10px 40px rgba(255,92,138,.22);
+}
+.hero p { max-width:620px; margin:0 auto; color:var(--muted); font-size:18px; line-height:1.75; }
+.actions { margin-top:30px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+.btn {
+  border:0; cursor:pointer; padding:14px 20px; border-radius:999px;
+  font:700 15px "DM Sans"; transition:.2s; display:inline-flex; align-items:center; gap:8px;
+}
+.btn-primary { background:var(--pink); color:white; box-shadow:0 12px 30px rgba(255,92,138,.28); }
+.btn-primary:hover { transform:translateY(-2px); }
+.btn-soft { background:white; color:var(--deep); box-shadow:0 10px 30px rgba(80,20,42,.08); }
+.section { padding:100px 0; }
+.section-head { text-align:center; max-width:700px; margin:0 auto 44px; }
+.kicker { color:var(--pink); font-weight:800; text-transform:uppercase; font-size:12px; letter-spacing:.14em; }
+h2 { font-family:"Playfair Display",serif; font-size:clamp(38px,5vw,62px); margin:10px 0 12px; }
+.section-head p { color:var(--muted); line-height:1.7; }
+.letter {
+  max-width:800px; margin:auto; padding:clamp(28px,5vw,58px);
+  background:var(--card); backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,.9); border-radius:34px; box-shadow:var(--shadow);
+}
+.letter p { font-family:"Playfair Display",serif; font-size:clamp(19px,2.3vw,25px); line-height:1.75; margin:0 0 18px; }
+.signature { text-align:right; color:var(--pink); font-weight:800; margin-top:25px; }
+.gallery {
+  columns:3 260px; column-gap:18px;
+}
+.photo {
+  width:100%; display:block; margin:0 0 18px; border-radius:22px;
+  box-shadow:0 12px 35px rgba(62,20,39,.12); cursor:pointer;
+  transition:.25s; break-inside:avoid;
+}
+.photo:hover { transform:translateY(-4px) scale(1.01); }
+.memory-card {
+  max-width:900px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr;
+  background:white; border-radius:30px; overflow:hidden; box-shadow:var(--shadow);
+}
+.memory-card img { width:100%; height:100%; object-fit:cover; min-height:420px; }
+.memory-copy { padding:clamp(30px,5vw,60px); display:flex; flex-direction:column; justify-content:center; }
+.memory-copy h3 { font-family:"Playfair Display"; font-size:42px; margin:10px 0 15px; }
+.memory-copy p { color:var(--muted); line-height:1.8; }
+.wishes { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.wish {
+  padding:28px; border-radius:25px; background:white; box-shadow:0 10px 35px rgba(65,20,40,.08);
+}
+.wish .icon { font-size:30px; }
+.wish h3 { margin:12px 0 8px; }
+.wish p { margin:0; color:var(--muted); line-height:1.6; }
+.final {
+  min-height:75vh; display:grid; place-items:center; text-align:center;
+  padding:80px 20px; position:relative;
+}
+.final-inner { max-width:760px; }
+.final h2 { font-size:clamp(48px,8vw,90px); }
+.final p { color:var(--muted); font-size:18px; line-height:1.8; }
+footer { text-align:center; padding:30px; color:#9a7e89; font-size:13px; }
+.float-heart {
+  position:fixed; pointer-events:none; z-index:60; font-size:22px;
+  animation:floatUp 2.8s ease-out forwards;
+}
+@keyframes floatUp {
+  0% { transform:translateY(0) scale(.7); opacity:0; }
+  15% { opacity:1; }
+  100% { transform:translateY(-180px) rotate(18deg) scale(1.3); opacity:0; }
+}
+.confetti { position:fixed; inset:0; pointer-events:none; z-index:100; overflow:hidden; }
+.confetti i {
+  position:absolute; top:-20px; width:9px; height:14px; border-radius:2px;
+  animation:fall 3.5s linear forwards;
+}
+@keyframes fall {
+  to { transform:translate3d(var(--x),110vh,0) rotate(720deg); opacity:0; }
+}
+.modal {
+  position:fixed; inset:0; z-index:90; display:none; place-items:center;
+  background:rgba(27,10,18,.78); padding:20px;
+}
+.modal.open { display:grid; }
+.modal-inner { max-width:900px; width:100%; position:relative; }
+.modal img { width:100%; max-height:78vh; object-fit:contain; border-radius:20px; }
+.modal-caption { color:white; text-align:center; margin-top:12px; }
+.close { position:absolute; right:-5px; top:-48px; color:white; font-size:30px; cursor:pointer; }
+.countdown { display:flex; justify-content:center; gap:10px; margin-top:25px; flex-wrap:wrap; }
+.timebox {
+  min-width:78px; padding:12px 10px; background:rgba(255,255,255,.78);
+  border-radius:18px; box-shadow:0 10px 25px rgba(80,20,42,.07);
+}
+.timebox b { display:block; font-size:25px; color:var(--pink); }
+.timebox small { color:#866b77; }
+
+.music-control {
+  position:fixed; right:18px; bottom:18px; z-index:80;
+  border:1px solid rgba(255,255,255,.9); cursor:pointer;
+  padding:12px 16px; border-radius:999px;
+  background:rgba(255,255,255,.86); backdrop-filter:blur(14px);
+  color:var(--deep); font:700 14px "DM Sans";
+  box-shadow:0 12px 35px rgba(66,20,39,.14);
+  transition:.2s;
+}
+.music-control:hover { transform:translateY(-2px); }
+.music-control.playing { background:var(--pink); color:white; border-color:transparent; }
+@media (max-width:750px) {
+  .music-control { right:12px; bottom:12px; padding:11px 14px; }
+}
+@media (max-width:750px) {
+  .navlinks { display:none; }
+  .memory-card { grid-template-columns:1fr; }
+  .memory-card img { min-height:300px; }
+  .wishes { grid-template-columns:1fr; }
+  .section { padding:75px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- Birthday music -->
+<audio id="birthdayMusic" src="assets/birthday-music.mp3" loop preload="auto" autoplay></audio>
+<button class="music-control" id="musicControl" type="button" onclick="toggleMusic()" aria-label="Play or pause birthday music">🎵 <span>Music</span></button>
+
+<nav class="nav">
+  <div class="brand">For <span>Marina</span> ♡</div>
+  <div class="navlinks">
+    <a href="#letter">Letter</a>
+    <a href="#memories">Memories</a>
+    <a href="#wishes">Wishes</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="hero-card">
+    <div class="eyebrow">A little birthday surprise</div>
+    <h1>Happy Birthday,<br><span class="accent">Marina</span> ❤️</h1>
+    <p>
+      Today is about celebrating you — your smile, your kindness, your little habits,
+      and every memory that somehow becomes special just because you're in it.
+    </p>
+    <div class="countdown" id="countdown">
+      <div class="timebox"><b id="days">00</b><small>days</small></div>
+      <div class="timebox"><b id="hours">00</b><small>hours</small></div>
+      <div class="timebox"><b id="minutes">00</b><small>minutes</small></div>
+      <div class="timebox"><b id="seconds">00</b><small>seconds</small></div>
+    </div>
+    <div class="actions">
+      <a class="btn btn-primary" href="#letter">Open your letter 💌</a>
+      <button class="btn btn-soft" onclick="celebrate()">Make it sparkle ✨</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="letter">
+  <div class="section-head">
+    <div class="kicker">A letter for you</div>
+    <h2>Something I wanted you to know.</h2>
+  </div>
+  <div class="letter">
+    <p>Dear Marina,</p>
+    <p>
+      Happy birthday to you. ❤️ I hope today reminds you of how loved, appreciated,
+      and special you are.
+    </p>
+    <p>
+      Looking through these photos made me realise how many different little moments
+      can become one beautiful story. From childhood memories to the person you are
+      today, every version of you is worth celebrating.
+    </p>
+    <p>
+      I don't know what the future will bring, but I hope there will be many more
+      ordinary days that turn into our favourite memories — more laughs, more places,
+      more random pictures, and more moments where we can simply be ourselves.
+    </p>
+    <p>
+      Keep being you. Keep smiling. And please remember that you deserve all the
+      happiness in the world.
+    </p>
+    <div class="signature">With love, Haziq ❤️</div>
+  </div>
+</section>
+
+<section class="section" id="memories">
+  <div class="section-head">
+    <div class="kicker">Our little gallery</div>
+    <h2>Memories worth keeping.</h2>
+    <p>Tap any photo to see it bigger.</p>
+  </div>
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="memory-card">
+      <img src="assets/memory-16.jpg" alt="Marina taking a mirror selfie" loading="lazy">
+      <div class="memory-copy">
+        <div class="kicker">One more thing</div>
+        <h3>Still so many memories to make.</h3>
+        <p>
+          From your childhood memories to the person you are today, every picture tells a little part of your story.
+          And the best part is that there are still so many pages left to fill — new places, new jokes, new adventures,
+          and new memories together.
+        </p>
+        <button class="btn btn-primary" onclick="celebrate()">One more birthday wish ✨</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="wishes">
+  <div class="section-head">
+    <div class="kicker">My wishes for you</div>
+    <h2>Three simple wishes.</h2>
+  </div>
+  <div class="container wishes">
+    <div class="wish">
+      <div class="icon">🌷</div>
+      <h3>Be happy</h3>
+      <p>May you always have reasons to smile, even on the days that don't go as planned.</p>
+    </div>
+    <div class="wish">
+      <div class="icon">✨</div>
+      <h3>Keep growing</h3>
+      <p>May every new chapter bring you closer to the person and life you dream about.</p>
+    </div>
+    <div class="wish">
+      <div class="icon">❤️</div>
+      <h3>Feel loved</h3>
+      <p>May you always know that you matter and that your presence makes a difference.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="final-inner">
+    <div class="eyebrow">The last page... for now</div>
+    <h2>Happy Birthday, Marina ❤️</h2>
+    <p>
+      Thank you for being part of my life. Here's to another year of you —
+      and hopefully many more memories together.
+    </p>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="celebrate()">Celebrate! 🎉</button>
+      <a class="btn btn-soft" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to the beginning ↑</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>Made with love for Marina · 27 August 2026</footer>
+
+<div class="modal" id="modal" onclick="closeModal(event)">
+  <div class="modal-inner">
+    <div class="close" onclick="closeModal()">×</div>
+    <img id="modalImg" src="" alt="">
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
+</div>
+<div class="confetti" id="confetti"></div>
+
+<script>
+const photos = [{"src": "assets/memory-01.jpg", "caption": "A peaceful evening by the water — that smile says everything. 🌅"}, {"src": "assets/memory-02.jpg", "caption": "A proud little moment, dressed up and glowing at the event. ✨"}, {"src": "assets/memory-03.jpg", "caption": "A beautiful night, a bouquet in your hands, and that happy smile. 🌷"}, {"src": "assets/memory-04.jpg", "caption": "A quiet night outside, enjoying the lights and the moment. 🌙"}, {"src": "assets/memory-05.jpg", "caption": "The very beginning — little Marina, already adorable. 🍼"}, {"src": "assets/memory-06.jpg", "caption": "A fun day out, hiding from the sun and still looking cute. ☀️"}, {"src": "assets/memory-07.jpg", "caption": "Little Marina with the sweetest smile. A memory worth keeping forever. ❤️"}, {"src": "assets/memory-08.jpg", "caption": "A childhood day at the playground, with Mum and a happy little you. 🛝"}, {"src": "assets/memory-09.jpg", "caption": "Tiny Marina on her little tricycle — look how small you were! 🥹"}, {"src": "assets/memory-10.jpg", "caption": "Another precious childhood moment — those eyes are unforgettable. 💗"}, {"src": "assets/memory-11.jpg", "caption": "All smiles at the badminton court. 🏸"}, {"src": "assets/memory-12.jpg", "caption": "A sunny day out on the street, looking effortlessly beautiful. ☀️"}, {"src": "assets/memory-13.jpg", "caption": "Standing proudly outside the training centre — another chapter of your journey. 🎓"}, {"src": "assets/memory-14.jpg", "caption": "A bright day outdoors with your happiest pose. 🌿"}, {"src": "assets/memory-15.jpg", "caption": "A peaceful day surrounded by greenery — you make every place look better. 🌳"}, {"src": "assets/memory-16.jpg", "caption": "A mirror selfie before heading out — simple, pretty, and completely you. ❤️"}];
+
+const gallery = document.getElementById("gallery");
+photos.forEach((p, i) => {
+  const img = document.createElement("img");
+  img.className = "photo";
+  img.src = p.src;
+  img.alt = p.caption;
+  img.loading = "lazy";
+  img.onclick = () => openModal(p);
+  gallery.appendChild(img);
+});
+
+function openModal(p) {
+  document.getElementById("modalImg").src = p.src;
+  document.getElementById("modalCaption").textContent = p.caption;
+  document.getElementById("modal").classList.add("open");
+}
+function closeModal(e) {
+  if (!e || e.target.id === "modal" || e.target.classList.contains("close")) {
+    document.getElementById("modal").classList.remove("open");
+  }
+}
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") document.getElementById("modal").classList.remove("open");
+});
+
+function celebrate() {
+  const confetti = document.getElementById("confetti");
+  confetti.innerHTML = "";
+  const symbols = ["❤️","💗","✨","🎉","🌸","💖"];
+  for (let i=0;i<70;i++) {
+    const el = document.createElement("i");
+    el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left = Math.random()*100 + "vw";
+    el.style.setProperty("--x", (Math.random()*220-110) + "px");
+    el.style.animationDelay = Math.random()*0.8 + "s";
+    el.style.fontSize = (12 + Math.random()*16) + "px";
+    confetti.appendChild(el);
+  }
+  for (let i=0;i<12;i++) {
+    setTimeout(() => {
+      const h = document.createElement("div");
+      h.className = "float-heart";
+      h.textContent = i % 2 ? "💗" : "❤️";
+      h.style.left = (10 + Math.random()*80) + "vw";
+      h.style.top = (45 + Math.random()*35) + "vh";
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 2900);
+    }, i*100);
+  }
+  setTimeout(() => confetti.innerHTML="", 4500);
+}
+
+function birthdayTarget() {
+  // Malaysia time: birthday starts at 00:00 on 27 August 2026.
+  // If the page is opened after midnight, show time until the next birthday.
+  const now = new Date();
+  let target = new Date("2026-08-27T00:00:00");
+  if (now >= target) target = new Date("2027-08-27T00:00:00");
+  return target;
+}
+function updateCountdown() {
+  const diff = birthdayTarget() - new Date();
+  const sec = Math.max(0, Math.floor(diff/1000));
+  const d = Math.floor(sec/86400);
+  const h = Math.floor((sec%86400)/3600);
+  const m = Math.floor((sec%3600)/60);
+  const s = sec%60;
+  document.getElementById("days").textContent = String(d).padStart(2,"0");
+  document.getElementById("hours").textContent = String(h).padStart(2,"0");
+  document.getElementById("minutes").textContent = String(m).padStart(2,"0");
+  document.getElementById("seconds").textContent = String(s).padStart(2,"0");
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+const birthdayMusic = document.getElementById("birthdayMusic");
+const musicControl = document.getElementById("musicControl");
+
+function updateMusicButton() {
+  const playing = !birthdayMusic.paused;
+  musicControl.classList.toggle("playing", playing);
+  musicControl.innerHTML = playing ? "🎵 <span>Playing</span>" : "🔇 <span>Play music</span>";
+}
+
+function toggleMusic() {
+  if (birthdayMusic.paused) {
+    birthdayMusic.play().then(updateMusicButton).catch(updateMusicButton);
+  } else {
+    birthdayMusic.pause();
+    updateMusicButton();
+  }
+}
+
+// Browsers may block autoplay with sound. Start automatically when allowed,
+// and start the music on the first interaction if autoplay was blocked.
+birthdayMusic.volume = 0.65;
+birthdayMusic.play().then(updateMusicButton).catch(updateMusicButton);
+document.addEventListener("pointerdown", () => {
+  if (birthdayMusic.paused) birthdayMusic.play().then(updateMusicButton).catch(updateMusicButton);
+}, { once:false, passive:true });
+birthdayMusic.addEventListener("play", updateMusicButton);
+birthdayMusic.addEventListener("pause", updateMusicButton);
+updateMusicButton();
+
+// Gentle heart trail when clicking/tapping.
+document.addEventListener("click", (e) => {
+  if (e.target.closest("button,a,.photo,.modal")) return;
+  const h = document.createElement("div");
+  h.className = "float-heart";
+  h.textContent = "♡";
+  h.style.left = e.clientX + "px";
+  h.style.top = e.clientY + "px";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 2900);
+});
+</script>
+</body>
+</html>
